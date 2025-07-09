@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>Contact Us - SoftIT | Get in Touch for IT Consulting Services</title>
+  <meta name="description" content="Contact SoftIT for professional IT consulting services. Get in touch with our experienced team for personalized IT solutions. Email: me@soft.it.com.au">
+  <meta name="keywords" content="contact SoftIT, IT consulting contact, get quote IT services, Australian IT consultants contact">
+  <meta name="author" content="SoftIT Pty Ltd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://softit.com.au/contact.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://softit.com.au/contact.html">
+  <meta property="og:title" content="Contact SoftIT - Get in Touch for IT Consulting Services">
+  <meta property="og:description" content="Contact our experienced IT consulting team for personalized solutions. Get in touch today for a consultation.">
+  <meta property="og:image" content="https://softit.com.au/images/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://softit.com.au/contact.html">
+  <meta property="twitter:title" content="Contact SoftIT - Get in Touch for IT Consulting Services">
+  <meta property="twitter:description" content="Contact our experienced IT consulting team for personalized solutions. Get in touch today for a consultation.">
+  <meta property="twitter:image" content="https://softit.com.au/images/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Additional Styles for Contact Page -->
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 120px 0 80px;
+      color: white;
+      text-align: center;
+    }
+    
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+    }
+    
+    .contact-method {
+      background: var(--bg-white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    
+    .contact-method:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contact-method-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+      color: white;
+    }
+    
+    .contact-method h3 {
+      color: var(--text-dark);
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .contact-method p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+    
+    .contact-method a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .contact-method a:hover {
+      text-decoration: underline;
+    }
+    
+    .contact-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 60px;
+    }
+    
+    .office-hours {
+      background: var(--bg-white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-top: 30px;
+    }
+    
+    .office-hours h3 {
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .hours-list {
+      list-style: none;
+    }
+    
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .faq-section {
+      margin-top: 60px;
+    }
+    
+    .faq-item {
+      background: var(--bg-white);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      background: none;
+      border: none;
+      width: 100%;
+      padding: 20px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: var(--bg-light);
+    }
+    
+    .faq-answer {
+      padding: 0 20px 20px;
+      color: var(--text-light);
+      display: none;
+    }
+    
+    .faq-answer.active {
+      display: block;
+    }
+    
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    
+    @media (max-width: 768px) {
+      .contact-main {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact SoftIT",
+    "description": "Get in touch with SoftIT for professional IT consulting services and personalized solutions.",
+    "url": "https://softit.com.au/contact.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "SoftIT Pty Ltd",
+      "email": "me@soft.it.com.au",
+      "url": "https://softit.com.au",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AU"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">SoftIT</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Header -->
+    <section class="contact-hero">
+      <div class="hero-container">
+        <h1>Get in Touch With Us</h1>
+        <p>Ready to transform your business with our IT solutions? Let's start the conversation.</p>
+      </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="section">
+      <div class="section-container">
+        <h2 class="section-title">How to Reach Us</h2>
+        <p class="section-subtitle">Choose the method that works best for you</p>
+        
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <p>Get a detailed response within 24 hours</p>
+            <a href="mailto:me@soft.it.com.au">me@soft.it.com.au</a>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p>Speak directly with our consultants</p>
+            <a href="tel:+61XXXXXXXXX">+61 XXX XXX XXX</a>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Schedule a Meeting</h3>
+            <p>Book a free consultation session</p>
+            <a href="mailto:me@soft.it.com.au?subject=Meeting Request">Schedule Now</a>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Live Chat</h3>
+            <p>Quick answers to your questions</p>
+            <a href="#" onclick="showNotification('Live chat feature coming soon!', 'info')">Start Chat</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="section" style="background: var(--bg-light);">
+      <div class="section-container">
+        <div class="contact-main">
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <p style="color: var(--text-light); margin-bottom: 30px;">Fill out the form below and we'll get back to you as soon as possible.</p>
+            
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+61 XXX XXX XXX">
+              </div>
+              
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your company name">
+              </div>
+              
+              <div class="form-group">
+                <label for="service">Service Interest</label>
+                <select id="service" name="service" style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                  <option value="">Select a service</option>
+                  <option value="it-consulting">IT Consulting</option>
+                  <option value="software-development">Software Development</option>
+                  <option value="cloud-solutions">Cloud Solutions</option>
+                  <option value="cybersecurity">Cybersecurity</option>
+                  <option value="digital-transformation">Digital Transformation</option>
+                  <option value="it-support">IT Support</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="budget">Project Budget (Optional)</label>
+                <select id="budget" name="budget" style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                  <option value="">Select budget range</option>
+                  <option value="under-10k">Under $10,000</option>
+                  <option value="10k-50k">$10,000 - $50,000</option>
+                  <option value="50k-100k">$50,000 - $100,000</option>
+                  <option value="100k-plus">$100,000+</option>
+                  <option value="ongoing">Ongoing Support</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="timeline">Project Timeline</label>
+                <select id="timeline" name="timeline" style="width: 100%; padding: 12px 16px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 16px;">
+                  <option value="">Select timeline</option>
+                  <option value="immediate">Immediate (ASAP)</option>
+                  <option value="1-month">Within 1 month</option>
+                  <option value="3-months">Within 3 months</option>
+                  <option value="6-months">Within 6 months</option>
+                  <option value="planning">Just planning</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Project Details *</label>
+                <textarea id="message" name="message" required placeholder="Please describe your project requirements, goals, and any specific challenges you're facing..."></textarea>
+              </div>
+              
+              <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px;">
+                <input type="checkbox" id="newsletter" name="newsletter" style="width: auto; margin-top: 4px;">
+                <label for="newsletter" style="margin-bottom: 0; font-weight: normal; cursor: pointer;">
+                  Subscribe to our newsletter for IT tips and industry insights
+                </label>
+              </div>
+              
+              <button type="submit" class="submit-button">Send Message</button>
+            </form>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>We're here to help you succeed. Reach out to us through any of the following channels:</p>
+            
+            <ul class="contact-details">
+              <li>
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>Email</strong><br>
+                  <a href="mailto:me@soft.it.com.au">me@soft.it.com.au</a>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong>Phone</strong><br>
+                  <a href="tel:+61XXXXXXXXX">+61 XXX XXX XXX</a>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Location</strong><br>
+                  Australia (Remote & On-site Services Available)
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-globe"></i>
+                <div>
+                  <strong>Website</strong><br>
+                  <a href="https://softit.com.au">www.softit.com.au</a>
+                </div>
+              </li>
+            </ul>
+            
+            <!-- Office Hours -->
+            <div class="office-hours">
+              <h3><i class="fas fa-clock"></i> Business Hours</h3>
+              <ul class="hours-list">
+                <li><span>Monday</span><span>9:00 AM - 6:00 PM</span></li>
+                <li><span>Tuesday</span><span>9:00 AM - 6:00 PM</span></li>
+                <li><span>Wednesday</span><span>9:00 AM - 6:00 PM</span></li>
+                <li><span>Thursday</span><span>9:00 AM - 6:00 PM</span></li>
+                <li><span>Friday</span><span>9:00 AM - 6:00 PM</span></li>
+                <li><span>Saturday</span><span>By Appointment</span></li>
+                <li><span>Sunday</span><span>Closed</span></li>
+              </ul>
+              <p style="margin-top: 15px; font-size: 14px; color: var(--text-muted);">
+                All times are in Australian Eastern Standard Time (AEST). 
+                Emergency support available 24/7 for existing clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="section-container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Quick answers to common questions about our services</p>
+        
+        <div class="faq-section">
+          <div class="faq-item">
+            <button class="faq-question">
+              How quickly can you start working on my project?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We can typically begin initial consultations within 1-2 business days of your inquiry. The full project start time depends on the scope and complexity, but most projects can commence within 1-2 weeks after agreement finalization.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you work with small businesses or only large enterprises?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We work with businesses of all sizes, from startups and small businesses to large enterprises. Our solutions are scalable and can be tailored to fit your specific needs and budget.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              What is your typical project timeline?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Project timelines vary based on scope and complexity. Simple consulting projects may take 2-4 weeks, while comprehensive software development or digital transformation projects can take 3-12 months. We provide detailed timelines during the planning phase.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Do you provide ongoing support after project completion?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we offer comprehensive post-project support including maintenance, updates, troubleshooting, and system optimization. We can provide both one-time support and ongoing support contracts based on your needs.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Can you work remotely or do you require on-site presence?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We offer both remote and on-site services. Many of our projects can be completed entirely remotely, while others may require some on-site presence. We'll work with you to determine the best approach for your specific project and location.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              How do you ensure the security of our data and systems?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Security is our top priority. We follow industry best practices, use secure development methodologies, implement proper access controls, and can sign NDAs and other security agreements. All our consultants are experienced in security protocols and compliance requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--bg-light);">
+      <div class="section-container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <h2>Ready to Start Your Project?</h2>
+          <p style="font-size: 18px; color: var(--text-light); margin-bottom: 30px;">Don't wait - let's discuss your requirements and get started on transforming your business with the right IT solutions.</p>
+          <a href="mailto:me@soft.it.com.au?subject=Project Inquiry" class="cta-button">Send Email Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 SoftIT Pty Ltd. All rights reserved.</p>
+      <p>Building the building blocks for your success.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+  
+  <!-- FAQ Functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const faqItem = this.parentElement;
+          const answer = faqItem.querySelector('.faq-answer');
+          const icon = this.querySelector('i');
+          
+          // Close all other FAQ items
+          faqQuestions.forEach(otherQuestion => {
+            if (otherQuestion !== this) {
+              otherQuestion.classList.remove('active');
+              otherQuestion.parentElement.querySelector('.faq-answer').classList.remove('active');
+              otherQuestion.querySelector('i').style.transform = 'rotate(0deg)';
+            }
+          });
+          
+          // Toggle current FAQ item
+          this.classList.toggle('active');
+          answer.classList.toggle('active');
+          
+          if (this.classList.contains('active')) {
+            icon.style.transform = 'rotate(180deg)';
+          } else {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Not Found - SoftIT</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to SoftIT homepage for IT consulting services.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+    }
+    
+    .error-code {
+      font-size: 120px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+    
+    .error-message {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .error-description {
+      font-size: 16px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      max-width: 600px;
+    }
+    
+    .error-actions {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .error-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary-color);
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .error-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .error-button.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .error-button.secondary:hover {
+      background: white;
+      color: var(--primary-color);
+    }
+    
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 80px;
+      }
+      
+      .error-message {
+        font-size: 20px;
+      }
+      
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .error-button {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-message">Page Not Found</h1>
+    <p class="error-description">
+      Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+      Don't worry, let's get you back on track.
+    </p>
+    
+    <div class="error-actions">
+      <a href="index.html" class="error-button">
+        <i class="fas fa-home"></i> Go Home
+      </a>
+      <a href="services.html" class="error-button secondary">
+        <i class="fas fa-cogs"></i> Our Services
+      </a>
+      <a href="contact.html" class="error-button secondary">
+        <i class="fas fa-envelope"></i> Contact Us
+      </a>
+    </div>
+  </div>
+
+  <!-- Simple animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const errorCode = document.querySelector('.error-code');
+      
+      // Add a subtle animation to the 404 text
+      let scale = 1;
+      let direction = 1;
+      
+      setInterval(() => {
+        scale += direction * 0.002;
+        if (scale >= 1.05) direction = -1;
+        if (scale <= 0.95) direction = 1;
+        
+        errorCode.style.transform = `scale(${scale})`;
+      }, 50);
+    });
+  </script>
+</body>
+</html>
