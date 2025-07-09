@@ -110,7 +110,7 @@ softitwebsite/
 
 ## 📞 Contact Information
 
-- **Email**: me@soft.it.com.au
+- **Email**: me@softit.com.au
 - **Website**: https://softit.com.au
 - **Location**: Australia
 
@@ -215,7 +215,7 @@ This project is licensed under the MIT License. See LICENSE file for details.
 
 For support or questions about this website:
 
-- Email: me@soft.it.com.au
+- Email: me@softit.com.au
 - Create an issue in this repository
 
 ---
