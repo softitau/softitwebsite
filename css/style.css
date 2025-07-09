@@ -48,6 +48,9 @@ body {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 24px;
   font-weight: 700;
   color: var(--primary-color);
@@ -57,6 +60,26 @@ body {
 
 .logo:hover {
   color: var(--secondary-color);
+}
+
+.logo-image {
+  height: 35px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-image {
+  transform: scale(1.05);
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Fallback for when image doesn't load */
+.logo-image:not([src]), .logo-image[src=""] {
+  display: none;
 }
 
 .nav-menu {

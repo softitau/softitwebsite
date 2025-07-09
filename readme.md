@@ -172,12 +172,19 @@ Update the CSS variables in `css/style.css`:
 
 Add the following recommended images to `/images/` directory:
 
-- `logo.png` - Company logo
+- `logo.png` - Company logo (recommended: 200x60px or similar aspect ratio)
 - `about-team.jpg` - Team photo
 - `hero-bg.jpg` - Hero background (optional)
 - `favicon.ico` - Website favicon
 - `apple-touch-icon.png` - Apple touch icon
 - `og-image.jpg` - Open Graph image for social sharing
+
+**Logo Requirements:**
+
+- Format: PNG with transparent background preferred
+- Size: Recommended 200x60px (or maintain 3:1 aspect ratio)
+- The logo will be displayed at 40px height on desktop, 35px on mobile
+- Fallback: Text "SoftIT" will show if logo image is not available
 
 ## 📊 Performance Optimization
 
