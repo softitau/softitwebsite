@@ -10,6 +10,7 @@ A modern, responsive website for SoftIT - an experienced IT consulting company b
 - **Fast Loading**: Optimized CSS and JavaScript for excellent performance
 - **Accessibility**: Built with accessibility best practices in mind
 - **Contact Forms**: Interactive contact forms with validation
+- **Click-to-Reveal Phone**: Protected phone number with obfuscation against scrapers
 - **GitHub Pages Ready**: Configured for easy deployment on GitHub Pages
 
 ## 📁 Project Structure
@@ -110,9 +111,10 @@ softitwebsite/
 
 ## 📞 Contact Information
 
-- **Email**: me@softit.com.au
+- **Email**: info@softit.com.au
+- **Phone**: Click to reveal on website (protected from scrapers)
 - **Website**: https://softit.com.au
-- **Location**: Australia
+- **Location**: Gold Coast, QLD
 
 ## 🎯 Pages Overview
 
@@ -190,6 +192,24 @@ Add the following recommended images to `/images/` directory:
 - **Contact Forms**: Implement server-side validation and spam protection
 - **HTTPS**: Use HTTPS in production (GitHub Pages provides this)
 - **Headers**: Add security headers (Content Security Policy, etc.)
+- **Phone Protection**: Click-to-reveal system protects phone number from scrapers
+
+### Phone Number Protection
+
+The website implements a sophisticated phone number protection system:
+
+- **Hidden by Default**: Phone numbers are not visible in the HTML source
+- **Click-to-Reveal**: Users must click a button to reveal the phone number
+- **Obfuscation**: Phone number is encoded and split to prevent scraping
+- **User-Friendly**: Provides clear indication that phone is available on click
+- **Analytics Ready**: Tracks phone reveals for marketing insights
+
+**How it works**:
+
+1. Phone number is split into parts and base64 encoded
+2. JavaScript assembles and decodes the number on user interaction
+3. Creates clickable tel: link after reveal for mobile users
+4. Includes hover effects and animations for better UX
 
 ## 📈 Analytics and Monitoring
 
@@ -215,7 +235,7 @@ This project is licensed under the MIT License. See LICENSE file for details.
 
 For support or questions about this website:
 
-- Email: me@softit.com.au
+- Email: info@softit.com.au
 - Create an issue in this repository
 
 ---

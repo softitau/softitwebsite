@@ -306,3 +306,111 @@ function addScrollToTop() {
 
 // Initialize scroll to top button
 document.addEventListener("DOMContentLoaded", addScrollToTop);
+
+// Phone number obfuscation and reveal functionality
+class PhoneReveal {
+  constructor() {
+    // Obfuscated phone number parts (split and encoded)
+    this.phoneParts = [
+      this.encode("(+61) "),
+      this.encode("487"),
+      this.encode(" 835"),
+      this.encode(" 223"),
+    ];
+    this.init();
+  }
+
+  // Simple encoding to obfuscate from basic scrapers
+  encode(str) {
+    return btoa(str);
+  }
+
+  decode(str) {
+    return atob(str);
+  }
+
+  // Get the full phone number
+  getPhoneNumber() {
+    return this.phoneParts.map((part) => this.decode(part)).join("");
+  }
+
+  // Get phone number for tel: links (no spaces/parentheses)
+  getTelLink() {
+    return this.getPhoneNumber().replace(/[^\d+]/g, "");
+  }
+
+  init() {
+    // Initialize all phone reveal elements
+    document.addEventListener("DOMContentLoaded", () => {
+      this.setupPhoneReveals();
+    });
+  }
+
+  setupPhoneReveals() {
+    const phoneElements = document.querySelectorAll(".phone-reveal");
+
+    phoneElements.forEach((element) => {
+      this.createPhoneRevealElement(element);
+    });
+  }
+
+  createPhoneRevealElement(container) {
+    const hiddenElement = document.createElement("span");
+    hiddenElement.className = "phone-hidden";
+    hiddenElement.innerHTML =
+      '<i class="fas fa-phone phone-reveal-icon"></i>Click to reveal phone';
+
+    // Add click event
+    hiddenElement.addEventListener("click", (e) => {
+      e.preventDefault();
+      this.revealPhone(container, hiddenElement);
+    });
+
+    // Clear container and add hidden element
+    container.innerHTML = "";
+    container.appendChild(hiddenElement);
+  }
+
+  revealPhone(container, hiddenElement) {
+    // Add revealing animation
+    container.classList.add("revealing");
+
+    setTimeout(() => {
+      const phoneNumber = this.getPhoneNumber();
+      const telLink = this.getTelLink();
+
+      // Create revealed phone link
+      const revealedElement = document.createElement("a");
+      revealedElement.href = `tel:${telLink}`;
+      revealedElement.className = "phone-revealed";
+      revealedElement.textContent = phoneNumber;
+      revealedElement.title = "Click to call";
+
+      // Replace hidden element with revealed element
+      container.innerHTML = "";
+      container.appendChild(revealedElement);
+
+      // Remove animation class
+      container.classList.remove("revealing");
+
+      // Track phone reveal (for analytics if needed)
+      this.trackPhoneReveal();
+    }, 250);
+  }
+
+  trackPhoneReveal() {
+    // Analytics tracking (optional)
+    if (typeof gtag !== "undefined") {
+      gtag("event", "phone_reveal", {
+        event_category: "contact",
+        event_label: "phone_number_revealed",
+      });
+    }
+
+    // Console log for development
+    console.log("Phone number revealed at:", new Date().toISOString());
+  }
+}
+
+// Initialize phone reveal functionality
+const phoneReveal = new PhoneReveal();

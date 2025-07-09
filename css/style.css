@@ -363,6 +363,76 @@ main {
   margin-right: 15px;
 }
 
+/* Click-to-reveal phone number styles */
+.phone-reveal {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.phone-hidden {
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.phone-hidden:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.phone-revealed {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.phone-revealed:hover {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+.phone-reveal-icon {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.phone-reveal.revealing {
+  animation: phoneRevealPulse 0.5s ease-in-out;
+}
+
+@keyframes phoneRevealPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Contact method phone reveal styles */
+.contact-method .phone-hidden {
+  background: var(--bg-light);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-method .phone-hidden:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
 /* Footer */
 .footer {
   background: var(--text-dark);
